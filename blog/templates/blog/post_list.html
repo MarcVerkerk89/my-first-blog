@@ -6,18 +6,14 @@
         <div>
             <h1><a href="">Marc's Blog</a></h1>
         </div>
-
-        <div>
-            <p>published: 07.09.2016, 9:10</p>
-            <h2><a href="">My first post</a></h2>
-            <p>GET'r'DONE</p>
-        </div>
-
-        <div>
-            <p>published: 07.09.2016, 9:10</p>
-            <h2><a href="">WHAT it DO now YALL</a></h2>
-            <p>THIS IS HOW YOU DO IT!<p>
-        </div>
+		
+		{% for post in posts %}
+    		<div>
+        	<p>published: {{ post.published_date }}</p>
+        	<h1><a href="">{{ post.title }}</a></h1>
+       		<p>{{ post.text|linebreaksbr }}</p>
+   			</div>
+		{% endfor %}
+        
     </body>
 </html>
- ALL THREE SECTIONS ARE CREATED!
